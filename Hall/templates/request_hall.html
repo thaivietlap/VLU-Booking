@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Đặt chỗ khán phòng</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="/static/auditorio/fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/static/auditorio/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="/static/auditorio/vendor/date-picker/css/datepicker.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/static/auditorio/css/style.css">
+
+		<!-- Background Image -->
+		<style>
+            /* Set the background image */
+            body {
+                background-image: url("{{ url_for('static', filename='images/img_login_background.jpg') }}");
+                background-size: cover;
+                background-position: center center;
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+        
+	</head>
+
+	<body class="body">
+		<div class="wrapper">
+			<div class="inner">
+				<form action="/request_hall" method="POST">
+					<h3 style="font-family: 'Montserrat', sans-serif;">Đặt phòng hội trường</h3>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="" style="font-family: 'Montserrat', sans-serif;">Tên đầy đủ</label>
+							<input name ="ten" type="text" class="form-control" placeholder="Nguyen van A" required="true">
+						</div>
+						<div class="form-wrapper">
+							<label for="" style="font-family: 'Montserrat', sans-serif;">Email</label>
+							<input type="text" name ="email" class="form-control" placeholder="@vanlanguni.vn" required="true">
+						</div>
+					</div>
+					
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="" style="font-family: 'Montserrat', sans-serif;">Ngày Đặt</label>
+							<input type="date" class="form-control" name ="ngay">
+						</div>
+						<div class="form-wrapper">
+							<label for="" style="font-family: 'Montserrat', sans-serif;">Thời gian</label>
+							<input type="text" class="form-control" placeholder="13:00-16:30" required="true" name="date">
+						</div>
+					</div>
+						
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">Số lượng trợ lý</label>
+							<select name="asistentes" class="form-control">
+								<option value="10">10 hoặc hơn</option>
+								<option value="30">30 hoặc hơn</option>
+								<option value="50">50 hoặc hơn</option>
+								<option value="100">100 hoặc hơn</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-wrapper">
+						<label for="">Lý do đặt chỗ</label>
+						<input type="text" class="form-control" placeholder="Cho biết lý do tại sao bạn muốn đặt khán phòng" required="true" name="ly_do">
+					</div>
+					<br>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" style="font-family: 'Montserrat', sans-serif;">Tôi hiểu rằng lịch trình mong muốn có thể thay đổi tùy thuộc vào cơ quan quản lý
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button data-text="Đã gửi" type="submit">
+						<span style="font-family: 'Montserrat', sans-serif;">Gửi Yêu Cầu</span>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+		<script src="/static/auditorio/js/jquery-3.3.1.min.js"></script>
+		<script src="/static/auditorio/vendor/date-picker/js/datepicker.js"></script>
+		<script src="/static/auditorio/vendor/date-picker/js/datepicker.en.js"></script>
+		<script src="/static/auditorio/js/main.js"></script>
+	</body>
+</html>

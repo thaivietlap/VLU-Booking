@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+        body {
+            background-image: url("/static/images/img_login_background.jpg");
+            margin: 0;
+            background-size: cover;
+            background-position: bottom;
+            padding: 15px;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+    
+	<title>Kết quả đặt phòng</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<center><h1 style="font-family: impact;color:white;margin-top: 20px;margin-bottom:120px;font-size: 65px; -webkit-text-stroke: 2px black;">Phòng đạt tiêu chí yêu cầu</h1></center>
+	<table class="table table-hover table-dark" background="white">
+    <thead>
+      <tr>
+        <th scope="row">Phòng</th>
+        <th scope="row">Sức chứa</th>
+        <th scope="row">Máy chiếu</th>
+        <th scope="row">Bảng thông minh</th>
+        <th scope="row">Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in datos %}
+      <tr>
+        <th scope="row">{{i.1}}</th>
+        <td>{{i.8}}</td>
+        <td>{{i.9}}</td>
+        <td>{{i.10}}</td>
+        <td><a href="/validar/{{i.0}}" class="btn btn-secondary">Đặt phòng</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    
+      </table>
+
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Kết quả đặt phòng</title>
+  
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+  
+  <!-- Custom Styles -->
+  <style>
+    body {
+        background-image: url("/static/images/img_login_background.jpg");
+        margin: 0;
+        background-size: cover;
+        background-position: bottom;
+        padding: 15px;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    h1 {
+        font-family: 'Impact', sans-serif;
+        color: white;
+        margin-top: 20px;
+        margin-bottom: 120px;
+        font-size: 65px;
+        -webkit-text-stroke: 2px black;
+    }
+  </style>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+          crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <center>
+      <h1 style="font-family: 'Montserrat', sans-serif;">Phòng đạt tiêu chí yêu cầu</h1>
+    </center>
+
+    <!-- Table to display search results -->
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr style="font-family: 'Montserrat', sans-serif;">
+          <th scope="col">Phòng</th>
+          <th scope="col">Sức chứa</th>
+          <th scope="col">Máy chiếu</th>
+          <th scope="col">Bảng thông minh</th>
+          <th scope="col">Thời Gian</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for room in datos %}
+        <tr>
+          <th scope="row">{{ room[1] }}</th>
+          <td>{{ room[8] }}</td>
+          <td>{{ room[9] }}</td>
+          <td>{{ room[10] }}</td>
+          <td><a href="/validar/{{ room[0] }}" class="btn btn-secondary">Đặt phòng</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
